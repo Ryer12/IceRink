@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="LibData">
+  <DataContextMoniker Name="/LibDataDataContext" />
+  <nestedChildShapes>
+    <classShape Id="5f63fe54-637f-4e68-99c8-88d10bc42ba9" absoluteBounds="6.75, 3.125, 2, 3.3093082682291666">
+      <DataClassMoniker Name="/LibDataDataContext/LIB_TRANSACTION" />
+      <nestedChildShapes>
+        <elementListCompartment Id="fbe2a09a-8319-4e01-ae1a-b894b67dbea4" absoluteBounds="6.765, 3.585, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="682e58f0-cfaa-45f1-970a-0fd7c409347d" absoluteBounds="2.75, 4.875, 2, 1.9631982421875">
+      <DataClassMoniker Name="/LibDataDataContext/DayTotal" />
+      <nestedChildShapes>
+        <elementListCompartment Id="82b50ee6-7b81-4d9b-a85b-60bda21843d1" absoluteBounds="2.765, 5.335, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="5bb7deb1-9173-4eff-903b-42605d7f16cd" absoluteBounds="2.5, 1.75, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/LibDataDataContext/LIB_PRICE_LIST" />
+      <nestedChildShapes>
+        <elementListCompartment Id="89095d8e-f8db-4d29-a14b-87a6327a4228" absoluteBounds="2.515, 2.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(4.5 : 3.32294840494792); (6.75 : 3.32294840494792)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/LibDataDataContext/LIB_PRICE_LIST/LIB_PRICE_LIST_LIB_TRANSACTION" />
+      <nodes>
+        <classShapeMoniker Id="5bb7deb1-9173-4eff-903b-42605d7f16cd" />
+        <classShapeMoniker Id="5f63fe54-637f-4e68-99c8-88d10bc42ba9" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

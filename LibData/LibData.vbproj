@@ -1,0 +1,187 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>
+    </SchemaVersion>
+    <ProjectGuid>{BA5DA61B-4801-4ED8-BCCA-947CC3F7C605}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>LibData</RootNamespace>
+    <AssemblyName>LibData</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>Empty</MyType>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>
+    </DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>
+    </DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <None Include="LibData.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>LibData.designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="My Project\DataSources\LibDataEntities.datasource" />
+    <None Include="My Project\DataSources\LibOraEntities.datasource" />
+    <None Include="My Project\DataSources\Oracle.DataAccess.Client.OnChangeEventHandler.datasource" />
+    <None Include="My Project\DataSources\Oracle.DataAccess.Client.OracleAQAgent.datasource" />
+    <None Include="My Project\DataSources\Oracle.DataAccess.Client.OracleAQDequeueOptions.datasource" />
+    <None Include="My Project\DataSources\Oracle.DataAccess.Client.OracleAQEnqueueOptions.datasource" />
+    <None Include="My Project\DataSources\Oracle.DataAccess.Client.OracleAQMessage.datasource" />
+    <None Include="My Project\DataSources\Oracle.DataAccess.Client.OracleAQMessageAvailableEventArgs.datasource" />
+    <None Include="My Project\DataSources\Oracle.DataAccess.Client.OracleAQMessageAvailableEventHandler.datasource" />
+    <None Include="My Project\DataSources\Oracle.DataAccess.Client.OracleAQQueue.datasource" />
+    <None Include="My Project\DataSources\Oracle.DataAccess.Client.OracleBulkCopy.datasource" />
+    <None Include="My Project\DataSources\Oracle.DataAccess.Client.OracleBulkCopyColumnMapping.datasource" />
+    <None Include="My Project\DataSources\Oracle.DataAccess.Client.OracleBulkCopyColumnMappingCollection.datasource" />
+    <None Include="My Project\DataSources\Oracle.DataAccess.Client.OracleClientFactory.datasource" />
+    <None Include="My Project\DataSources\Oracle.DataAccess.Client.OracleCommand.datasource" />
+    <None Include="My Project\DataSources\Oracle.DataAccess.Client.OracleCommandBuilder.datasource" />
+    <None Include="My Project\DataSources\Oracle.DataAccess.Client.OracleConnection.datasource" />
+    <None Include="My Project\DataSources\Oracle.DataAccess.Client.OracleConnectionStringBuilder.datasource" />
+    <None Include="My Project\DataSources\Oracle.DataAccess.Client.OracleDataAdapter.datasource" />
+    <None Include="My Project\DataSources\Oracle.DataAccess.Client.OracleDatabase.datasource" />
+    <None Include="My Project\DataSources\Oracle.DataAccess.Client.OracleDataReader.datasource" />
+    <None Include="My Project\DataSources\Oracle.DataAccess.Client.OracleDataSourceEnumerator.datasource" />
+    <None Include="My Project\DataSources\Oracle.DataAccess.Client.OracleDependency.datasource" />
+    <None Include="My Project\DataSources\Oracle.DataAccess.Client.OracleError.datasource" />
+    <None Include="My Project\DataSources\Oracle.DataAccess.Client.OracleErrorCollection.datasource" />
+    <None Include="My Project\DataSources\Oracle.DataAccess.Client.OracleException.datasource" />
+    <None Include="My Project\DataSources\Oracle.DataAccess.Client.OracleFailoverEventArgs.datasource" />
+    <None Include="My Project\DataSources\Oracle.DataAccess.Client.OracleFailoverEventHandler.datasource" />
+    <None Include="My Project\DataSources\Oracle.DataAccess.Client.OracleGlobalization.datasource" />
+    <None Include="My Project\DataSources\Oracle.DataAccess.Client.OracleHAEventArgs.datasource" />
+    <None Include="My Project\DataSources\Oracle.DataAccess.Client.OracleHAEventHandler.datasource" />
+    <None Include="My Project\DataSources\Oracle.DataAccess.Client.OracleInfoMessageEventArgs.datasource" />
+    <None Include="My Project\DataSources\Oracle.DataAccess.Client.OracleInfoMessageEventHandler.datasource" />
+    <None Include="My Project\DataSources\Oracle.DataAccess.Client.OracleNotificationEventArgs.datasource" />
+    <None Include="My Project\DataSources\Oracle.DataAccess.Client.OracleNotificationRequest.datasource" />
+    <None Include="My Project\DataSources\Oracle.DataAccess.Client.OracleParameter.datasource" />
+    <None Include="My Project\DataSources\Oracle.DataAccess.Client.OracleParameterCollection.datasource" />
+    <None Include="My Project\DataSources\Oracle.DataAccess.Client.OraclePermission.datasource" />
+    <None Include="My Project\DataSources\Oracle.DataAccess.Client.OraclePermissionAttribute.datasource" />
+    <None Include="My Project\DataSources\Oracle.DataAccess.Client.OracleRowsCopiedEventArgs.datasource" />
+    <None Include="My Project\DataSources\Oracle.DataAccess.Client.OracleRowsCopiedEventHandler.datasource" />
+    <None Include="My Project\DataSources\Oracle.DataAccess.Client.OracleRowUpdatedEventArgs.datasource" />
+    <None Include="My Project\DataSources\Oracle.DataAccess.Client.OracleRowUpdatedEventHandler.datasource" />
+    <None Include="My Project\DataSources\Oracle.DataAccess.Client.OracleRowUpdatingEventArgs.datasource" />
+    <None Include="My Project\DataSources\Oracle.DataAccess.Client.OracleRowUpdatingEventHandler.datasource" />
+    <None Include="My Project\DataSources\Oracle.DataAccess.Client.OracleTransaction.datasource" />
+    <None Include="My Project\DataSources\Oracle.DataAccess.Client.OracleXmlQueryProperties.datasource" />
+    <None Include="My Project\DataSources\Oracle.DataAccess.Client.OracleXmlSaveProperties.datasource" />
+    <None Include="My Project\DataSources\Oracle.DataAccess.Types.INullable.datasource" />
+    <None Include="My Project\DataSources\Oracle.DataAccess.Types.IOracleArrayTypeFactory.datasource" />
+    <None Include="My Project\DataSources\Oracle.DataAccess.Types.IOracleCustomType.datasource" />
+    <None Include="My Project\DataSources\Oracle.DataAccess.Types.IOracleCustomTypeFactory.datasource" />
+    <None Include="My Project\DataSources\Oracle.DataAccess.Types.OracleArrayMappingAttribute.datasource" />
+    <None Include="My Project\DataSources\Oracle.DataAccess.Types.OracleBFile.datasource" />
+    <None Include="My Project\DataSources\Oracle.DataAccess.Types.OracleBinary.datasource" />
+    <None Include="My Project\DataSources\Oracle.DataAccess.Types.OracleBlob.datasource" />
+    <None Include="My Project\DataSources\Oracle.DataAccess.Types.OracleClob.datasource" />
+    <None Include="My Project\DataSources\Oracle.DataAccess.Types.OracleCustomTypeMappingAttribute.datasource" />
+    <None Include="My Project\DataSources\Oracle.DataAccess.Types.OracleDate.datasource" />
+    <None Include="My Project\DataSources\Oracle.DataAccess.Types.OracleDecimal.datasource" />
+    <None Include="My Project\DataSources\Oracle.DataAccess.Types.OracleIntervalDS.datasource" />
+    <None Include="My Project\DataSources\Oracle.DataAccess.Types.OracleIntervalYM.datasource" />
+    <None Include="My Project\DataSources\Oracle.DataAccess.Types.OracleNullValueException.datasource" />
+    <None Include="My Project\DataSources\Oracle.DataAccess.Types.OracleObjectMappingAttribute.datasource" />
+    <None Include="My Project\DataSources\Oracle.DataAccess.Types.OracleRef.datasource" />
+    <None Include="My Project\DataSources\Oracle.DataAccess.Types.OracleRefCursor.datasource" />
+    <None Include="My Project\DataSources\Oracle.DataAccess.Types.OracleString.datasource" />
+    <None Include="My Project\DataSources\Oracle.DataAccess.Types.OracleTimeStamp.datasource" />
+    <None Include="My Project\DataSources\Oracle.DataAccess.Types.OracleTimeStampLTZ.datasource" />
+    <None Include="My Project\DataSources\Oracle.DataAccess.Types.OracleTimeStampTZ.datasource" />
+    <None Include="My Project\DataSources\Oracle.DataAccess.Types.OracleTruncateException.datasource" />
+    <None Include="My Project\DataSources\Oracle.DataAccess.Types.OracleTypeException.datasource" />
+    <None Include="My Project\DataSources\Oracle.DataAccess.Types.OracleUdt.datasource" />
+    <None Include="My Project\DataSources\Oracle.DataAccess.Types.OracleXmlStream.datasource" />
+    <None Include="My Project\DataSources\Oracle.DataAccess.Types.OracleXmlType.datasource" />
+    <None Include="My Project\Settings.settings">
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="LibData.designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LibData.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Module1.vb" />
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="LibData.dbml.layout">
+      <DependentUpon>LibData.dbml</DependentUpon>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

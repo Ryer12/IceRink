@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="LibCRData" Class="LibDataDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Table Name="dbo.LIB_TRANSACTION" Member="LIB_TRANSACTIONs">
+    <Type Name="LIB_TRANSACTION">
+      <Column Name="LIBSalesID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="LIBLine" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LIBPCode" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="LIBItems" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LIBCash" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="LIBChk" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="LIBPDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="LIBPTime" Type="System.TimeSpan" DbType="Time" CanBeNull="true" />
+      <Column Name="ORAUpdate" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="PType" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="LIBPLID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="LibLocation" Type="System.String" DbType="NVarChar(25)" CanBeNull="true" />
+      <Column Name="EOD" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="LIB_PRICE_LIST_LIB_TRANSACTION" Member="LIB_PRICE_LIST" ThisKey="LIBPLID" OtherKey="LIBPLID" Type="LIB_PRICE_LIST" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DayTotals" Member="DayTotals">
+    <Type Name="DayTotal">
+      <Column Name="PLItemName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="LIBItems" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LIBLine" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LIBCash" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="ORAUpdate" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="LibLocation" Type="System.String" DbType="NVarChar(25)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LIB_PRICE_LIST" Member="LIB_PRICE_LISTs">
+    <Type Name="LIB_PRICE_LIST">
+      <Column Name="LIBPLID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PLItemName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PLPrice" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="PLLine" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="PriceNotSet" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="LIB_PRICE_LIST_LIB_TRANSACTION" Member="LIB_TRANSACTIONs" ThisKey="LIBPLID" OtherKey="LIBPLID" Type="LIB_TRANSACTION" />
+    </Type>
+  </Table>
+</Database>

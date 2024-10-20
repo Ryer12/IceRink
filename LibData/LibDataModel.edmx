@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="LibDataModel.Store" Alias="Self" Provider="Oracle.DataAccess.Client" ProviderManifestToken="10.2" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="LibDataModelStoreContainer">
+          <EntitySet Name="LIB_PRICE_LIST" EntityType="LibDataModel.Store.LIB_PRICE_LIST" store:Type="Tables" Schema="LM" />
+          <EntitySet Name="LIB_TRANSACTION" EntityType="LibDataModel.Store.LIB_TRANSACTION" store:Type="Tables" Schema="LM" />
+        </EntityContainer>
+        <EntityType Name="LIB_PRICE_LIST">
+          <Key>
+            <PropertyRef Name="LIBPLID" />
+          </Key>
+          <Property Name="LIBPLID" Type="rowid" Nullable="false" />
+          <Property Name="PLITEMNAME" Type="nvarchar2" MaxLength="50" />
+          <Property Name="PLPRICE" Type="number" />
+        </EntityType>
+        <EntityType Name="LIB_TRANSACTION">
+          <Key>
+            <PropertyRef Name="LIBSALEID" />
+          </Key>
+          <Property Name="LIBSALEID" Type="rowid" Nullable="false" />
+          <Property Name="LIBLINE" Type="number" />
+          <Property Name="LIBPCODE" Type="nvarchar2" MaxLength="50" />
+          <Property Name="LIBITEMS" Type="number" />
+          <Property Name="LIBCASH" Type="float" Precision="2" />
+          <Property Name="CHK" Type="float" Precision="2" />
+          <Property Name="LIBPDATE" Type="date" />
+          <Property Name="LIBPTIME" Type="timestamp with local time zone" />
+          <Property Name="ORAUPDATE" Type="char" MaxLength="1" />
+          <Property Name="PTYPE" Type="nvarchar2" MaxLength="50" />
+          <Property Name="LIBLPID" Type="rowid" />
+        </EntityType>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="LibDataModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="LibDataEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="LIB_PRICE_LIST" EntityType="LibDataModel.LIB_PRICE_LIST" />
+          <EntitySet Name="LIB_TRANSACTION" EntityType="LibDataModel.LIB_TRANSACTION" />
+          <AssociationSet Name="LIB_PRICE_LISTLIB_TRANSACTION" Association="LibDataModel.LIB_PRICE_LISTLIB_TRANSACTION">
+            <End Role="LIB_PRICE_LIST" EntitySet="LIB_PRICE_LIST" />
+            <End Role="LIB_TRANSACTION" EntitySet="LIB_TRANSACTION" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="LIB_PRICE_LIST">
+          <Key>
+            <PropertyRef Name="LIBPLID" />
+          </Key>
+          <Property Name="LIBPLID" Type="String" Nullable="false" MaxLength="18" Unicode="false" FixedLength="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PLITEMNAME" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="PLPRICE" Type="Decimal" Precision="38" Scale="0" />
+          <NavigationProperty Name="LIB_TRANSACTION" Relationship="LibDataModel.LIB_PRICE_LISTLIB_TRANSACTION" FromRole="LIB_PRICE_LIST" ToRole="LIB_TRANSACTION" />
+        </EntityType>
+        <EntityType Name="LIB_TRANSACTION">
+          <Key>
+            <PropertyRef Name="LIBSALEID" />
+          </Key>
+          <Property Name="LIBSALEID" Type="String" Nullable="false" MaxLength="18" Unicode="false" FixedLength="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LIBLINE" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="LIBPCODE" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="LIBITEMS" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="LIBCASH" Type="Decimal" Precision="1" Scale="0" />
+          <Property Name="CHK" Type="Decimal" Precision="1" Scale="0" />
+          <Property Name="LIBPDATE" Type="DateTime" />
+          <Property Name="LIBPTIME" Type="DateTime" Precision="255" />
+          <Property Name="ORAUPDATE" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="PTYPE" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="LIBLPID" Type="String" MaxLength="18" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="LIB_PRICE_LIST" Relationship="LibDataModel.LIB_PRICE_LISTLIB_TRANSACTION" FromRole="LIB_TRANSACTION" ToRole="LIB_PRICE_LIST" />
+          <Property Type="String" Name="LIB_PRICE_LISTLIBPLID" Nullable="false" MaxLength="18" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <Association Name="LIB_PRICE_LISTLIB_TRANSACTION">
+          <End Type="LibDataModel.LIB_PRICE_LIST" Role="LIB_PRICE_LIST" Multiplicity="1" />
+          <End Type="LibDataModel.LIB_TRANSACTION" Role="LIB_TRANSACTION" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LIB_PRICE_LIST">
+              <PropertyRef Name="LIBPLID" />
+            </Principal>
+            <Dependent Role="LIB_TRANSACTION">
+              <PropertyRef Name="LIB_PRICE_LISTLIBPLID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="LibDataModelStoreContainer" CdmEntityContainer="LibDataEntities">
+          <EntitySetMapping Name="LIB_PRICE_LIST"><EntityTypeMapping TypeName="LibDataModel.LIB_PRICE_LIST"><MappingFragment StoreEntitySet="LIB_PRICE_LIST">
+            <ScalarProperty Name="LIBPLID" ColumnName="LIBPLID" />
+            <ScalarProperty Name="PLITEMNAME" ColumnName="PLITEMNAME" />
+            <ScalarProperty Name="PLPRICE" ColumnName="PLPRICE" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="LIB_TRANSACTION"><EntityTypeMapping TypeName="LibDataModel.LIB_TRANSACTION"><MappingFragment StoreEntitySet="LIB_TRANSACTION">
+            <ScalarProperty Name="LIBSALEID" ColumnName="LIBSALEID" />
+            <ScalarProperty Name="LIBLINE" ColumnName="LIBLINE" />
+            <ScalarProperty Name="LIBPCODE" ColumnName="LIBPCODE" />
+            <ScalarProperty Name="LIBITEMS" ColumnName="LIBITEMS" />
+            <ScalarProperty Name="LIBCASH" ColumnName="LIBCASH" />
+            <ScalarProperty Name="CHK" ColumnName="CHK" />
+            <ScalarProperty Name="LIBPDATE" ColumnName="LIBPDATE" />
+            <ScalarProperty Name="LIBPTIME" ColumnName="LIBPTIME" />
+            <ScalarProperty Name="ORAUPDATE" ColumnName="ORAUPDATE" />
+            <ScalarProperty Name="PTYPE" ColumnName="PTYPE" />
+            <ScalarProperty Name="LIBLPID" ColumnName="LIBLPID" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="LibDataModel">
+        <EntityTypeShape EntityType="LibDataModel.LIB_PRICE_LIST" Width="1.5" PointX="0.75" PointY="0.75" Height="1.59568359375" IsExpanded="true" />
+        <EntityTypeShape EntityType="LibDataModel.LIB_TRANSACTION" Width="1.5" PointX="4.5" PointY="0.75" Height="3.1340950520833326" IsExpanded="true" />
+        <AssociationConnector Association="LibDataModel.LIB_PRICE_LISTLIB_TRANSACTION">
+          <ConnectorPoint PointX="2.25" PointY="1.6439925130208335" />
+          <ConnectorPoint PointX="4.5" PointY="1.6439925130208335" />
+        </AssociationConnector>
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>
